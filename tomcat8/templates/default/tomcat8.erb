@@ -1,0 +1,25 @@
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment=JAVA_HOME=<%= node["tomcat8"]["javahome"] %>
+Environment=CATALINA_PID=<%= node["tomcat8"]["install_location"] %>/temp/tomcat.pid
+Environment=CATALINA_HOME=<%= node["tomcat8"]["install_location"] %>
+Environment=CATALINA_BASE=<%= node["tomcat8"]["install_location"] %>
+Environment='CATALINA_OPTS=<%= node["tomcat8"]["catalina_options"] %>'
+Environment='JAVA_OPTS=<%= node["tomcat8"]["java_options"] %>'
+
+ExecStart=<%= node["tomcat8"]["install_location"] %>/bin/startup.sh
+ExecStop=<%= node["tomcat8"]["install_location"] %>/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
