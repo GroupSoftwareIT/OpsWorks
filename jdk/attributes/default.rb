@@ -17,7 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default['jdk']['download_url'] = "http://gopswordksdeps.s3-website-us-east-1.amazonaws.com/jdk-8u144-linux-x64.tar.gz"
+default['jdk']['download_url'] = "http://gopswordksdeps.s3-website-us-east-1.amazonaws.com/jdk-8u131-linux-x64.tar.gz"
 default['jdk']['install_location'] = '/opt/jdk'
 default['jdk']['jdk_user'] = "root"
 default['jdk']['javahome'] = "/opt/jdk1.8.0_131"
