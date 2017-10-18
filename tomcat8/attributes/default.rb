@@ -26,4 +26,4 @@ default['tomcat8']['java_options'] = "-Djava.awt.headless=true -Djava.security.e
 default['tomcat8']['catalina_options'] = "-Xms512M -Xmx1024M -server -XX:+UseParallelGC -XX:MaxMetaspaceSize=1024m -Duser.timezone=+00:00"
 default['tomcat8']['tomcat_user'] = "tomcat"
 default['tomcat8']['autostart'] = "true"
-default['tomcat8']['javahome'] = "/opt/jdk1.8.0_131"
+default['tomcat8']['javahome'] = "/opt/jdk"
