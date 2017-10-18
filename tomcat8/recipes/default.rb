@@ -69,8 +69,8 @@ template "/etc/systemd/system/tomcat.service" do
   mode '0755'
 end
 
-#Start and enable tomcat service if requested
-service 'tomcat8' do
-  action [:enable, :start]
-  only_if { node['tomcat8']['autostart'] }
-end
+##Start and enable tomcat service if requested
+#service 'tomcat8' do
+#  action [:enable, :start]
+#  only_if { node['tomcat8']['autostart'] }
+#end
