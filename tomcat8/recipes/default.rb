@@ -21,6 +21,14 @@
 
 tmp_path = Chef::Config[:file_cache_path]
 
+#Create tomcat user
+user 'tomcat' do
+  comment 'Tomcat user'
+  home '/opt/'
+  shell '/bin/nologin'
+  password '$1$JJsvHslasdfjVEroftprNn4JHtDi'
+end
+
 #Download tomcat archive
 remote_file "#{tmp_path}/tomcat8.tar.gz" do
   source node['tomcat8']['download_url']
