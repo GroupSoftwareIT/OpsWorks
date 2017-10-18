@@ -27,6 +27,7 @@ user 'tomcat' do
   home '/opt/'
   shell '/bin/nologin'
   password '$1$JJsvHslasdfjVEroftprNn4JHtDi'
+  action :create
 end
 
 #Download tomcat archive
