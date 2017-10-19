@@ -4,6 +4,8 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
+tmp_path = Chef::Config[:file_cache_path]
+
 #Instalar ferramentas de apoio
 package ['htop', 'iftop', 'iotop', 'iptables-persistent', 'unzip', 'mysql-client']
 package ['automake', 'autotools-dev', 'g++', 'libcurl4-gnutls-dev', 'libfuse-dev', 'libssl-dev', 'libxml2-dev', 'make', 'pkg-config']
