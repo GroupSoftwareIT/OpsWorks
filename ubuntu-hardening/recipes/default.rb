@@ -73,12 +73,12 @@ group 'gadmin' do
   members node['ubhard']['admin_members']
   append true
 end
-bash 'su restrict' do
-  user 'root'
-  code <<-EOH
-    dpkg-statoverride --update --add root gadmin 4750 /bin/su
-  EOH
-end
+#bash 'su restrict' do
+#  user 'root'
+#  code <<-EOH
+#    dpkg-statoverride --update --add root gadmin 4750 /bin/su
+#  EOH
+#end
 
 
 #Sysctl
