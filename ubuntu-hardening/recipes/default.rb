@@ -69,6 +69,7 @@ bash 'su restrict' do
   user root
   code <<-EOH
     dpkg-statoverride --update --add root gadmin 4750 /bin/su
+  EOH
 end
 
 
