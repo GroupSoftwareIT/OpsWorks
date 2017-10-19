@@ -93,7 +93,7 @@ end
 
 #Set tomcat permissions
 bash 'Set tomcat permissions' do
-  user root
+  user 'root'
   cwd node['tomcat8']['install_location']
   code <<-EOH
     chown -R root:tomcat node['tomcat8']['install_location']
