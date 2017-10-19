@@ -4,7 +4,15 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-include_recipe 'apt'
+
+bash 'apt update && upgrade' do
+  user root
+  code <<-EOH
+    apt-get update && apt-get -y upgrade
+  EOH
+  action :run
+end
+
 
 #Instalar o fail2ban
 apt_package 'fail2ban' do
