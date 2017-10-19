@@ -26,6 +26,7 @@ directory '/comunidade21/config' do
   owner 'root'
   group 'tomcat'
   mode '0775'
+  recursive :true
   action :create
 end
 
@@ -49,6 +50,7 @@ directory '/var/log/comunidades21' do
   owner 'root'
   group 'tomcat'
   mode '0660'
+  recursive :true
   action :create
 end
 
@@ -58,12 +60,14 @@ directory '/opt/comunidade21' do
   owner 'root'
   group 'tomcat'
   mode '0770'
+  recursive :true
   action :create
 end
 directory '/opt/comunidades21' do
   owner 'root'
   group 'tomcat'
   mode '0770'
+  recursive :true
   action :create
 end
 
