@@ -6,7 +6,7 @@
 
 
 bash 'apt update && upgrade' do
-  user root
+  user 'root'
   code <<-EOH
     apt-get update && apt-get -y upgrade
   EOH
