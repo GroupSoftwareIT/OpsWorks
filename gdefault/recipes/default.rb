@@ -88,8 +88,9 @@ bash 'Extract s3fs archive' do
   user 'root'
   cwd '/opt/'
   code <<-EOH
-    tar -zxvf #{tmp_path}/s3fs.tgz --strip 1
+    mkdir s3fs-fuse
 	cd s3fs-fuse
+    tar -zxvf #{tmp_path}/s3fs.tgz --strip 1
 	./configure
 	make clean && make
 	make install
