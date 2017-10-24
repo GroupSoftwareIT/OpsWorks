@@ -22,7 +22,7 @@ end
 
 
 #Criar pasta de configuração
-directory '/comunidade21/config' do
+directory '/comunidade21' do
   owner 'root'
   group 'tomcat'
   mode '0775'
