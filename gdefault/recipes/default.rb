@@ -84,12 +84,17 @@ template "/root/.passwd-s3fs" do
   owner 'root'
   mode '0600'
 end
+directory '/opt/s3fs-fuse' do
+  owner 'root'
+  group 'root'
+  mode '0770'
+  recursive true
+  action :create
+end
 bash 'Extract s3fs archive' do
   user 'root'
-  cwd '/opt/'
+  cwd '/opt/s3fs-fuse'
   code <<-EOH
-    mkdir s3fs-fuse
-	cd s3fs-fuse
     tar -zxvf #{tmp_path}/s3fs.tgz --strip 1
 	./configure
 	make clean && make
