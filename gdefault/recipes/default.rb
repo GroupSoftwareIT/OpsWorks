@@ -8,7 +8,7 @@ tmp_path = Chef::Config[:file_cache_path]
 
 #Instalar ferramentas de apoio
 package ['htop', 'iftop', 'iotop', 'iptables-persistent', 'unzip', 'mysql-client']
-package ['automake', 'autotools-dev', 'g++', 'libcurl4-gnutls-dev', 'libfuse-dev', 'libssl-dev', 'libxml2-dev', 'make', 'pkg-config']
+package ['automake', 'autotools-dev', 'g++', 'libcurl4-gnutls-dev', 'libfuse-dev', 'libssl-dev', 'libxml2-dev', 'make', 'pkg-config', 'snmpd']
 
 
 #Configurar o timezone
@@ -102,4 +102,12 @@ bash 'Extract s3fs archive' do
 	s3fs -o allow_other -o passwd_file=/root/.passwd-s3fs comunidade21.config /comunidade21/
   EOH
   action :run
+end
+
+
+#Configura SNMP para monitoramento
+template "/etc/snmp/snmpd.conf" do
+  source 'snmpd.conf.erb'
+  owner 'root'
+  mode '0644'
 end

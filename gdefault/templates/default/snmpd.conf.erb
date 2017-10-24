@@ -1,0 +1,17 @@
+# Localizacao fisica do Servidor
+syslocation GROUP-AWS-COM21
+
+#        sec.name  source             community
+com2sec  groupinfra  192.168.49.69/32   GROUP
+com2sec  groupinfra  201.48.155.125/32   GROUP
+
+#         sec.model                             sec.name
+group group1   v1        groupinfra
+group group1   v2c       groupinfra
+
+#                               incl/excl       subtree  mask
+view    systemview    included   .1
+
+#              context sec.model sec.level    prefix    read   write notify
+access group1 ""      any       noauth    exact  systemview none  none
+

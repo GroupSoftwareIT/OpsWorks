@@ -107,8 +107,11 @@ bash 'Set tomcat permissions' do
 end
 
 
-##Start and enable tomcat service if requested
-#service 'tomcat8' do
-#  action [:enable, :start]
-#  only_if { node['tomcat8']['autostart'] }
-#end
+#Start and enable tomcat service if requested
+bash 'Start tomcat' do
+  user 'root'
+  code <<-EOH
+    service tomcat start
+  EOH
+  action :run
+end
