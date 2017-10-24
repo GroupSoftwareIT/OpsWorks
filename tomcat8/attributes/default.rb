@@ -27,4 +27,4 @@ default['tomcat8']['catalina_options'] = "-Xms512M -Xmx1024M -server -XX:+UsePar
 default['tomcat8']['tomcat_user'] = "tomcat"
 default['tomcat8']['autostart'] = "true"
 default['tomcat8']['javahome'] = "/opt/jdk"
-default['tomcat8']['deploy_location'] = "/opt/tomcat8/webapps
+default['tomcat8']['deploy_location'] = "/opt/tomcat8/webapps"
